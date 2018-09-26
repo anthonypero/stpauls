@@ -1,4 +1,4 @@
 # Ignore UpDraft and other Backup directory
 
-/updraft
+/updraft/back*
 /ai1wm-backups
