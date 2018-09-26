@@ -1,0 +1,162 @@
+.staff {
+
+    .page-content {
+        display: flex;
+    }
+
+    &__group {
+
+        padding-top: $gutter * 2;
+
+        &--title {
+            margin: 0 !important;
+            padding: 0 !important;
+            line-height: 1;
+        }
+
+    }
+
+    &__photo {
+        width: 33%;
+
+        flex-shrink: 0;
+
+        img {
+            width: 100%;
+            display: block;
+        }
+
+        padding-left: $gutter;
+        order: 2;
+    }
+
+    &__contact {
+        font-size: 1.5em;
+        padding: 10px 0px;
+        border-bottom: 1px solid $text;
+        margin-bottom: 10px;
+
+        .staff__member--contact__item {
+            padding: 0 10px;
+        }
+    }
+
+    &__phone {
+        text-align: center;
+        font-size: 1.5em;
+        font-weight: bold;
+    }
+
+    &__member {
+        display: flex;
+        font-size: .9em;
+
+        margin-top: 15px;
+        border-top: 1px solid $text;
+        padding-top: 18px;
+
+        &--footer {
+            display: flex;
+        }
+
+        &--position {
+            font-weight: 300;
+            color: $gray; 
+        }
+
+        &--name {
+            border-bottom: 1px solid $text;
+            line-height: 1;
+            padding-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        &--contact {
+            display: flex;
+            justify-content: center;
+
+            &__item {
+                margin: 0 5px;
+
+                a {
+                    color: $text;
+                }
+
+                &.facebook a:hover {
+                    color: $facebook;
+                }
+
+                &.twitter a:hover {
+                    color: $twitter;
+                }
+
+                &.linkedin a:hover {
+                    color: $linkedin;
+                }
+
+                &.instagram a:hover {
+                    color: $instagram;
+                }
+            }
+        }
+
+        &--phone {
+            line-height: 1;
+            padding: 12px 0px;
+        }
+
+        &--photo {
+            padding-right: 18px;
+        }
+
+        &--bio {
+            margin-top: $gutter / 3;
+            margin-bottom: $gutter / 3;
+        }
+
+        &--readmore a {
+
+            border-radius: 5px;
+            padding: 6px 13px;
+            background: $main_color;
+            color: white;
+            font-size: .9em;
+            font-weight: 300;
+            margin-top: 10px;
+            display: inline-block;
+            margin-bottom: 10px;
+
+            &:hover {
+                text-decoration:none;
+                border-bottom: none;
+                color: white;
+                background: $secondary_color;
+            }
+        }
+    }
+
+    &__contact-form {
+        background: #f0f0f0;
+        padding: $gutter;
+        margin-top: $gutter;
+
+        .contact-form__header {
+            line-height: 1;
+        }
+    }
+
+    div.wpforms-container-full .wpforms-form input[type=submit], div.wpforms-container-full .wpforms-form button[type=submit], div.wpforms-container-full .wpforms-form .wpforms-page-button {
+        background-color: $main_color;
+        border: none;
+        color: white;
+        font-size: 1em;
+        padding: 6px 12px;
+        border-radius: 5px;
+    }
+
+    div.wpforms-container-full .wpforms-form input[type=submit]:hover, div.wpforms-container-full .wpforms-form input[type=submit]:active, div.wpforms-container-full .wpforms-form button[type=submit]:hover, div.wpforms-container-full .wpforms-form button[type=submit]:active, div.wpforms-container-full .wpforms-form .wpforms-page-button:hover, div.wpforms-container-full .wpforms-form .wpforms-page-button:active {
+        background-color: $secondary_color;
+        border: none;
+        cursor: pointer;
+    }
+}

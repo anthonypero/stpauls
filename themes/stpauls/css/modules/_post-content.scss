@@ -1,0 +1,44 @@
+.post-content {
+    background-color: $main_color;
+    border-top: 1px solid $secondary_color;
+    border-bottom: 1px solid $secondary_color;
+    margin-bottom: 2px;
+
+    .flexwrapper {
+        justify-content: space-between;
+    }
+    
+    .block {
+        width: 31%;
+
+        &__title {
+            color: white;
+        }
+
+        .list {
+            border-top-color: $secondary_color;
+        }
+
+        .list--item::before {
+            background: white;
+        }
+
+        .list--item:not(:last-of-type) {
+            border-bottom-color: $secondary_color;
+        }
+
+        .list--link {
+            color: white;
+
+            &::before {
+                background-color: $secondary_color;
+            }
+
+            &:hover {
+                .list--link__postdate {
+                    color: $main_color;
+                }
+            }
+        }
+    }
+}

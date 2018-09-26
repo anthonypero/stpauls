@@ -1,0 +1,134 @@
+.gutter {
+
+    &__top {
+        padding-top: $gutter;
+
+        &--double {
+            padding-top: $gutter * 2;
+        }
+    }
+    &__bottom {
+        padding-bottom: $gutter;
+
+        &--double {
+            padding-bottom: $gutter * 2;
+        }
+    }
+    &__left {
+        padding-left: $gutter;
+
+        &--double {
+            padding-left: $gutter * 2;
+        }
+    }
+    &__right {
+        padding-right: $gutter;
+
+        &--double {
+            padding-right: $gutter * 2;
+        }
+    }
+}
+
+.container {
+    margin: 100px auto;
+    max-width: 1200px;
+    background-color: white;
+    box-shadow: 0 20px 50px rgba(0,0,0,.5);
+    position: relative;
+    z-index: 2;
+}
+
+@media (max-width: 1380px) {
+    .container {
+        margin-top: 40px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .container {
+        margin-top: 0px;
+    }
+}
+
+.site-content {
+    border-top: 1px solid $main_color;
+    border-bottom: 1px solid $main_color;
+    margin-bottom: 2px;
+}
+
+.flexwrapper {
+    display: flex;
+    align-items: stretch;
+}
+
+.sidebar {
+    width: 25%;
+    flex-shrink: 0;
+    margin-left: 30px;
+}
+
+.home .sidebar {
+    width: 33%;
+}
+
+.main-content {
+    flex: 1;
+}
+
+.site-footer {
+    background: $main_color;
+    display: flex;
+    padding: 0 30px;
+    border-top: 1px solid $secondary_color;
+    align-items: center;
+
+    &__logo {
+        height: 100%;
+        flex-basis: 50px;
+        padding: 4px;
+    }
+
+    &__church-info {
+        flex: 1;
+        padding-left: 10px;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+
+        .church-hours {
+            flex-shrink: 0;
+            width: 100%;
+        }
+    }
+}
+
+.home .site-footer {
+    background: $secondary_color;
+    border-top-color: $main_color;
+}
+
+.virtuosic-footer {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 40px auto;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 1.4rem;
+    font-weight: 100;
+    z-index: 1;
+
+    a {
+        color: $virtuosic;
+        font-weight: 600;
+        text-decoration: none;
+
+        &:hover {
+            color: white;
+            border-bottom: 1px solid;
+        }
+    }
+}

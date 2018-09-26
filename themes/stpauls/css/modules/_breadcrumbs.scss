@@ -1,0 +1,22 @@
+.breadcrumbs {
+    font-size: 1.4rem;
+    font-weight: 600;
+
+    &__trail--item {
+
+        &:not(:last-of-type)::after {
+            content: "\00a0 \00a0 /\00a0"; 
+ 
+        }
+    }
+
+    &__trail--link {
+        color: $main_color;
+        text-decoration: none;
+
+        &:hover {
+            border-bottom: 1px solid;
+            color: $secondary_color;
+        }
+    }
+}

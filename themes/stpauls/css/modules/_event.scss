@@ -1,0 +1,18 @@
+.event {
+    display: flex;
+
+    &__info {
+        width: 300px;
+        margin-right: $gutter;
+        background-color: $light_gray;
+        padding: $gutter;
+        flex-shrink: 0;
+        text-align: center;
+        font-size: .9em;
+    }
+
+    &__label {
+        font-weight: 600;
+        margin-top: $gutter / 2;
+    }
+}

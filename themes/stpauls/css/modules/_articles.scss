@@ -1,0 +1,21 @@
+.post-image {
+    figure {
+        margin-bottom: $gutter;
+    }
+
+    figcaption {
+        text-align: center;
+        color: $gray;
+        text-transform: uppercase;
+        font-size: .85em;
+        line-height: 1.2;
+        margin-top: $gutter;
+        padding-bottom: $gutter;
+        border-bottom: 1px solid $gray;
+    }
+
+    picture {
+        display: block;
+        line-height: 1;
+    }
+}

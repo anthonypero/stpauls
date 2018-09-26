@@ -1,0 +1,212 @@
+.identity {
+    display: block;
+    flex: 1;
+    margin-right: $gutter;
+
+    &__site-title {
+        color: $transparent;
+        text-decoration: none;
+        font-size: 0px;
+        line-height: 0;
+    }
+
+    &__logo {
+        max-width: 400px;
+    }
+}
+
+.utility {
+    padding: 0 30px;
+    display: flex;
+    justify-content: space-between;
+    height: 100px;
+    align-items: center; 
+    overflow: hidden;
+    border-bottom: 1px solid $secondary_color;
+
+    &__menu {
+
+        
+
+        &--list {
+            list-style: none;
+            margin-right: 27px;
+            display: flex;
+
+            &--item {
+                position: relative;
+                padding: 50px 0px;
+                display: flex;
+            }
+
+            &--link {
+                font-size: 1.6rem;
+                text-transform: lowercase;
+                color: $main_color;
+                text-decoration: none;
+                padding: 50px 13px;
+                position: relative;
+                z-index: 10;
+                transition: color .3s;
+                transition-delay: .3s;
+                text-align: center;
+
+                &:hover {
+                    color: white;
+                }
+
+            }
+
+            &--item::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                opacity: .8;
+                height: 100%;
+                width: 3px;
+                background: $gradient;
+                transform: scaleY(0);
+                transition: transform .3s,
+                            width .4s cubic-bezier(.8, 0, 0, 1) .3s;
+            }
+
+            &--item:hover::before {
+                transform: scaleY(1);
+                width: 100%;
+            }
+        }
+    }
+
+    .login-search {
+        display: flex;
+        align-items: center;
+
+        &__item {
+            font-size: 2.2rem;
+
+            a {
+                color: $main_color;
+                transition: all .2s;
+
+                &:hover {
+                    cursor: pointer;
+                    color: $secondary_color;
+                }
+            }
+        }
+
+        .login {
+            height: 40px;
+            display: flex;
+            align-items: center;
+            padding-right: 15px;
+            border-right: 1px solid $main_color;
+            margin-right: 15px;
+        }
+
+        .search {
+            position: relative;
+        }
+
+    }
+}
+
+.home .new-here {
+    background: $gradient;
+    opacity: 1;
+    
+    & a {
+        color: white;
+    }
+
+    &::before {
+        height: 0 !important;
+        width: 0 !important;
+    }
+}
+
+.single-article .utility {
+    border-bottom: 1px solid $main_color;
+    margin-bottom: 2px;
+}
+
+@media (max-width: 834px) {
+
+    .utility {
+        flex-wrap: wrap;
+        margin: 0; padding:0;
+        height: auto;
+
+        &__menu {
+            order: 3;
+            width: 100%;
+            border-top: 1px solid $secondary_color;
+            margin-top: 2px;
+
+            &--list {
+
+                display: flex;
+                margin-right: 0;
+
+                &--item {
+                    padding: 0;
+                    flex: 1;
+                }
+        
+                &--link {
+                    padding: 10px 20px;
+                    flex: 1;
+                    align-self: center;
+                }
+            }
+        }
+
+        .identity {
+            margin: 0;
+            padding: $gutter;
+            border-bottom: 1px solid $main_color;
+            height: 112px;
+        }
+
+        .login-search {
+            padding: $gutter;
+            border-bottom: 1px solid $main_color;
+            height: 112px;
+        }
+    }
+}
+
+@media (max-width: 575px) {
+
+    .utility {
+        .identity {
+            display: flex;
+            width: 100%;
+            display: block;
+            height: auto;
+            padding: 20px 10px;
+
+            &__logo {
+                width: 100%;
+                height: auto;
+                display: block;
+                margin: auto;
+            }
+        }
+
+        .login-search {
+            display: none;
+        }
+
+        &__menu {
+
+            &--list {
+
+                &--link {
+                    font-size: 1.2rem;
+                }
+            }
+        }
+    }
+}

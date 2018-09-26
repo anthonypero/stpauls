@@ -1,0 +1,68 @@
+.block {
+    
+    &.icon {
+
+        .block__title {
+            position: relative;
+            padding-left: 35px;
+
+            &::before {
+                position: absolute;
+                left: 0;
+                font-size: 25px;
+                padding-top: 7px;
+                color: $secondary_color;
+                width: 35px;
+                text-align: center;
+            }
+        }
+
+        &-link {
+
+            .block__title {
+
+                &::before {
+                    content: '\f0c1';
+                    font-family: 'Font Awesome 5 Free';
+                    font-weight: 900;
+                }
+            }
+        }
+
+        &-calendar {
+
+            .block__title {
+
+                &::before {
+                    content: '\f073';
+                    font-family: 'Font Awesome 5 Free';
+                    font-weight: 900;
+                }
+            }
+        }
+
+        &-page {
+
+            .block__title {
+
+                &::before {
+                    content: '\f15c';
+                    font-family: 'Font Awesome 5 Free';
+                    font-weight: 900;
+                }
+            }
+        }
+
+        &-news {
+
+            .block__title {
+
+                &::before {
+                    content: '\f1ea';
+                    font-family: 'Font Awesome 5 Free';
+                    font-weight: 900;
+                }
+            }
+        }
+    }
+}

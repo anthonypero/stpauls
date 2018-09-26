@@ -1,0 +1,137 @@
+.site-footer {
+    overflow: hidden;
+
+    &__logo {
+
+        svg {  
+            path {
+                fill: $secondary_color;
+            }
+        }
+    }
+
+    &__church-info {
+        color: white; 
+
+        .church-name {
+            font-family: 'Roboto Condensed', Impact, sans-serif;
+            text-transform: uppercase;
+            font-size: 2.4rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+
+        .church-address {
+            padding-left: 15px;
+            font-style: normal;
+            font-size: 1.6rem;
+            font-weight: 100;
+
+            a {
+                color: white;
+                text-decoration: none;
+
+                &:hover {
+                    color: $secondary_color;
+                }
+            }
+        }
+
+        .church-hours {
+            font-size: 1.6rem;
+            font-weight: 300;
+        }
+    }
+
+    &__social {
+        align-items: center;
+        display: flex;
+    }
+
+
+    .list {
+        list-style: none;
+        display: flex;
+        align-items: center;
+
+        &--item {
+            position: relative;
+            padding: 40px 0;
+        }
+
+        &--item::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 3px;
+            background: white;
+            transform: scaleY(0);
+            transition: transform .3s,
+                        width .4s cubic-bezier(.8, 0, 0, 1) .3s;
+        }
+
+        &--item:hover::before {
+            transform: scaleY(1);
+            width: 100%;
+        };
+
+        &--link {
+            color: white;
+            text-decoration: none;
+            font-size: 2.5rem;
+            line-height: 1;
+            padding: 50px 15px;
+            position: relative;
+            z-index: 10;
+
+            &.facebook:hover {
+                color: $facebook;
+            }
+
+            &.twitter:hover {
+                color: $twitter;
+            }
+            &.youtube:hover {
+                color: $google;
+            }
+            &.google-maps:hover {
+                color: $maps;
+            }
+            &.instagram:hover {
+                color: $instagram;
+            }
+            &.linkedin:hover {
+                color: $linkedin;
+            }
+            &.youtube:hover {
+                color: $youtube; 
+            }
+        }
+    }
+}
+
+.home .site-footer {
+    overflow: hidden;
+
+    &__logo {
+
+        svg {  
+            path {
+                fill: $main_color;
+            }
+        }
+    }
+
+    &__church-info {
+        .church-address {
+            a {
+                &:hover {
+                    color: $main_color;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}

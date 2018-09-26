@@ -1,0 +1,75 @@
+.featured-image.front {
+    min-height: 380px;
+    background-repeat: no-repeat;
+    position: relative;
+
+    border-top: 1px solid $main_color;
+    border-bottom: 1px solid $main_color;
+    margin: 2px 0;
+
+    .slide {
+        height: 380px;
+        background-size: cover;
+        background-position: center center;
+        display: block;
+        position: relative;
+
+        &__info {
+            position: absolute;
+            background-color: rgba(0,0,0,.5);
+            bottom: 0;
+            width: 100%;
+            padding-top: $gutter / 2;
+            padding-bottom: $gutter / 2;
+            padding-left: $gutter * 2;
+            padding-right: $gutter * 2;
+            color: white;
+            font-size: 16px;
+            font-weight: 300;
+
+        }
+
+        &__top {
+            font-family: 'Roboto Condensed', Impact, sans-serif;
+            margin-bottom: $gutter / 4;
+            display: flex;
+            align-items: center;
+        }
+
+        &__title {
+            text-transform: uppercase;
+            font-size: 40px;
+            font-weight: 600;
+        }
+
+        &__event-date {
+            font-size: 25px;
+            font-weight: 200;
+            color: $accent_color;
+            margin-left: 15px;
+            border-left: 2px solid $accent_color;
+            padding-left: 15px;
+        }
+    }
+
+    .lightslider__list {
+        list-style: none;
+    }
+
+    .lSPager {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+    }
+
+    .lSSlideOuter .lSPager.lSpg > li a {
+        height: 12px;
+        width: 12px;
+        background-color: rgba(201, 201, 201, 0.5);
+        border: 1px solid rgba(44, 44, 44, 0.5);
+    }
+
+    .lSSlideOuter .lSPager.lSpg > li:hover a, .lSSlideOuter .lSPager.lSpg > li.active a {
+        background-color: rgba($secondary_color, .5);
+    }
+}

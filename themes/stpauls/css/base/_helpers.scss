@@ -1,0 +1,23 @@
+.hidden,
+.menu-label,
+#wp-admin-bar-comments,
+#wp-admin-bar-wp-logo
+ {
+    display: none;
+}
+
+.alignright{
+    text-align: right;
+}
+
+.right {
+    float: right;
+}
+
+.left {
+    float: left;
+}
+
+.flex {
+    display: flex;
+}

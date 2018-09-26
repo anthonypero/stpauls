@@ -1,0 +1,99 @@
+.main-menu {
+    background: $main_color;
+    border-top: 1px solid $secondary_color;
+    border-bottom: 1px solid $secondary_color;
+    margin-bottom: 2px;
+    overflow: scroll;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    &__list {
+        list-style: none;
+        display: flex;
+        padding-left: 25px;
+        white-space: nowrap;
+
+        &--item {
+            padding: 15px 0;
+            position: relative;
+
+            &.current-menu-item,
+            &.current-menu-ancestor {
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    height: 100%;
+                    width: 3px;
+                    background: $gradient;
+                    transform: scaleY(0);
+                    transition: transform .3s,
+                                width .4s cubic-bezier(.8, 0, 0, 1) .3s;
+                }
+
+                &::before {
+                    transform: scaleY(1);
+                    width: 100%;
+                }
+            }
+        }
+
+        &--link {
+            color: white;
+            padding: 15px 25px;
+            text-decoration: none;
+            font-family: "Roboto Condensed", Impact, sans-serif;
+            font-size: 2rem;
+            text-transform: uppercase;
+            font-weight: 500;
+            position: relative;
+            text-shadow: 0 0 8px rgba(0,0,0,.6);
+            z-index: 10;
+        }
+
+        &--item::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 3px;
+            background: $gradient;
+            transform: scaleY(0);
+            transition: transform .3s,
+                        width .4s cubic-bezier(.8, 0, 0, 1) .3s;
+        }
+
+        &--item:hover::before {
+            transform: scaleY(1);
+            width: 100%;
+        }
+    }
+}
+
+@media (max-width: 834px) {
+
+    .main-menu {
+
+        &__list {
+
+            margin: 0;
+            padding: 0;
+
+            &--item {
+
+                padding: 10px;
+
+            }
+
+            &--link {
+
+                font-size: 1.6rem;
+            }
+        }
+    }
+}

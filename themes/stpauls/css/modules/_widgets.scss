@@ -1,0 +1,270 @@
+.block {
+
+    font-size: 16px;
+
+    p {
+        margin-top: 1.7rem;
+        line-height: 1.5;
+    }
+
+    &:not(:last-of-type) {
+        margin-bottom: 4rem;
+    }
+
+    &__title {
+        font-family: 'Roboto Condensed', Impact, sans-serif;
+        text-transform: uppercase;
+        font-weight: 600;
+        font-size: 3.5rem;
+        color: $secondary_color;
+        border-bottom: 1px solid;
+        margin-bottom: 2px;
+    }
+
+    .list {
+        border-top: 1px solid $main_color;
+        list-style: none;
+
+        &--item {
+            position: relative;
+            display: block;
+            z-index: 11;
+            border-bottom: 1px solid $main_color; 
+            padding-left: 3px;
+
+            &::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 3px;
+                background: $secondary_color;
+                transform: scaleY(0);
+                transition: transform .3s;
+                z-index: 11;
+            }
+
+            &:hover::before {
+                transform: scaleY(1);
+            }
+        }
+
+        &--link {
+            text-decoration: none;
+            font-size: 1.6rem;
+            color: $main_color;
+            padding: 10px;
+            display: block;
+            position: relative;
+            z-index: 10;
+            transition: color .4s;
+            transition-delay: .3s;
+
+            &:hover {
+                color: white;
+            }
+
+            &::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 0;
+                background-color: rgba($main_color, .8);
+                transition: width .4s cubic-bezier(.8, 0, 0, 1) .3s;
+                z-index: -1;
+            }
+
+            &:hover::before {
+                width: 100%;
+            }
+
+            &__postdate {
+                font-size: .8em;
+                color: $secondary_color;
+            }
+        }
+
+        &--date {
+            color: $gray;
+            display: block;
+            font-size: .8em;
+            transition: color .4s;
+            transition-delay: .3s;            
+        }
+
+        &--link:hover .list--date {
+            color: $secondary_color;
+        }
+
+        .children {
+            display: none;
+            border-top: 1px solid $main_color;
+            margin-left: -3px;
+            background-color: white;
+            position: relative;
+            z-index: 11;
+
+            .list--item {
+            }
+
+            .list--link {
+                padding-left: 30px;
+            }
+        }
+
+        &--item.current_list--item {
+
+            position: relative;
+            z-index: 9;
+
+            &::before {
+                transform: scaleY(1);
+                background: $secondary_color;
+            }
+
+            .list--link {
+
+                color: white;
+
+                &::before {
+                    width: 100%;
+                    background: $main_color;
+                }
+            }
+
+            .children {
+                display: block;
+                z-index: 11;
+
+                .list--item:last-of-type {
+                    border-bottom: none;
+                }
+
+                .list--link {
+
+                    color: $main_color;
+
+                    &:hover {
+                        color: white;
+                    }
+    
+                    &::before {
+                        width: 0%;
+                        background: rgba($main_color, .8);
+                    }
+
+                    &:hover::before {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+
+        &--item.current_page_ancestor {
+
+            position: relative;
+            z-index: 9;
+
+            &::before {
+                transform: scaleY(1);
+                background: $secondary_color;
+            }
+
+            .list--link {
+
+                color: white;
+
+                &::before {
+                    width: 100%;
+                    background: rgba($main_color, .8);
+                }
+            }
+
+            .children {
+                display: block;
+                z-index: 11;
+
+                .list--item:last-of-type {
+                    border-bottom: none;
+                }
+
+                .list--link {
+
+                    color: $main_color;
+
+                    &:hover {
+                        color: white;
+                    }
+    
+                    &::before {
+                        width: 0%;
+                        background: rgba($main_color, .8);
+                    }
+
+                    &:hover::before {
+                        width: 100%;
+                    }
+                }
+
+                .list--item.current_list--item {
+
+                    position: relative;
+                    z-index: 9;
+        
+                    &::before {
+                        transform: scaleY(1);
+                        background: $secondary_color;
+                    }
+        
+                    .list--link {
+        
+                        color: white;
+        
+                        &::before {
+                            width: 100%;
+                            background: $main_color;
+                        }
+                    }
+                }
+            }
+        }
+
+        &--item_has_children {
+
+           & > .list--link {
+                position: relative;
+
+                &::after {
+                    content: '\f101';
+                    font-family: 'Font Awesome 5 Free';
+                    font-weight: 900; 
+                    position: relative;
+                    font-size: .8em;
+                    left: 10px;
+                    top: -1px;
+                }
+            }
+        }
+
+        &--item_has_children.current_list--item,
+        &--item_has_children.current_page_ancestor {
+
+            & > .list--link {
+                position: relative;
+
+                &::after {
+                    content: '\f103';
+                    font-family: 'Font Awesome 5 Free';
+                    font-weight: 900; 
+                    position: relative;
+                    font-size: .8em;
+                    left: 10px;
+                    top: -1px;
+                }
+            }
+        }
+    }
+}
