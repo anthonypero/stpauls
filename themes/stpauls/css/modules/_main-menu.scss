@@ -3,17 +3,25 @@
     border-top: 1px solid $secondary_color;
     border-bottom: 1px solid $secondary_color;
     margin-bottom: 2px;
-    overflow: scroll;
+    width: 100vw;
+    overflow: hidden;
+    position: relative;
+    height: 55px;
 
-    &::-webkit-scrollbar {
-        display: none;
-    }
+    
 
     &__list {
         list-style: none;
         display: flex;
         padding-left: 25px;
+        margin-right: 100px;
         white-space: nowrap;
+        width: 100vw;
+        overflow-x: scroll;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
 
         &--item {
             padding: 15px 0;
@@ -73,20 +81,34 @@
             width: 100%;
         }
     }
+
+    &__overlay {
+        width: 100px;
+        background-image: linear-gradient(to left, $main_color,$main_color,$transparent);
+        height: 100px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 100;
+    }
 }
 
 @media (max-width: 834px) {
 
     .main-menu {
+        height: 40px;
 
         &__list {
 
-            margin: 0;
-            padding: 0;
+            padding-left: 0;
 
             &--item {
 
                 padding: 10px;
+                
+                &:last-of-type {
+                   padding-right: 100px;
+                }
 
             }
 

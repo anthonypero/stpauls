@@ -86,7 +86,7 @@
 
     .slide {
         width: 100vw;
-        height: 31.66vw;
+        height: 50vw;
         background-size: cover;
         background-position: top center;
         background-repeat: no-repeat;
@@ -134,4 +134,17 @@
     }
 }
 
+}
+
+@media (max-width: 834px) {
+
+    .featured-image.front {
+    
+        .slide {
+
+            &__title {
+                font-size: 24px;
+            }
+        }
+    }
 }

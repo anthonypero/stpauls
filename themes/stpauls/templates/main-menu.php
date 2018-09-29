@@ -14,12 +14,5 @@
         ]);
     ?>
 
-    <!-- <ul class="main-menu__list">
-        <li class="main-menu__list--item about-us"><a href="#" class="main-menu__list--link">About Us</a></li>
-        <li class="main-menu__list--item worship"><a href="#" class="main-menu__list--link">Worship</a></li>
-        <li class="main-menu__list--item ministries"><a href="#" class="main-menu__list--link">Ministries</a></li>
-        <li class="main-menu__list--item community"><a href="#" class="main-menu__list--link">Community</a></li>
-        <li class="main-menu__list--item news"><a href="#" class="main-menu__list--link">News</a></li>
-        <li class="main-menu__list--item events"><a href="#" class="main-menu__list--link">Events</a></li>
-    </ul> -->
+    <div class="main-menu__overlay"></div>
 </nav>

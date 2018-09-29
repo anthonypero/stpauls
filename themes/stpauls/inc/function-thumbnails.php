@@ -14,5 +14,5 @@ add_image_size( 'sp_large', 1200, 99999 );
 add_image_size( 'sp_medium', 960, 99999 );
 add_image_size( 'sp_small', 500, 99999 );
 add_image_size( 'sp_slider_lg', 1200, 380, true );
-add_image_size( 'sp_slider_md', 960, 304, true );
-add_image_size( 'sp_slider_sm', 600, 190, true );
+add_image_size( 'sp_slider_md', 960, 480, true );
+add_image_size( 'sp_slider_sm', 600, 300, true );
