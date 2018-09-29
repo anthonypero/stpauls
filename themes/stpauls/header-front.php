@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <title>This is Header Front <?php the_title(); ?> | <?php bloginfo( 'name' ); ?> | <?php echo get_option( 'location_city' ) . ', ' . get_option('location_state'); ?></title>
+    <title><?php bloginfo( 'name' ); ?> | <?php echo get_option( 'location_city' ) . ', ' . get_option('location_state'); ?></title>
     <meta name="description" content="St. Paul's Interior Page Template">
     <meta name="author" content="Virtuosic Media">
     

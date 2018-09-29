@@ -2113,7 +2113,7 @@ body:not(.home) .featured-image {
 
 .featured-image.front .slide__info {
   position: absolute;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.65);
   bottom: 0;
   width: 100%;
   padding-top: 12.5px;
