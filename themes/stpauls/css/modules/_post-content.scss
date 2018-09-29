@@ -42,3 +42,63 @@
         }
     }
 }
+
+@media (max-width: 1199px) {
+    .post-content {
+
+        .block {
+            width: 48%;
+
+            &.icon {
+
+                .block__title {
+
+                    &::before {
+                        font-size: 20px;
+
+                    }
+                }
+            }
+
+            &__title {
+                font-size: 3rem;
+            }
+        }
+
+        .list {
+
+            &--link {
+                font-size: 1.4rem;
+            }
+        }
+
+        .flexwrapper {
+            flex-wrap: wrap;
+        }
+
+        .widget-3 {
+            width: 100%;
+            flex-shrink: 0;
+        }
+    }
+}
+
+@media (max-width: 834px) {
+    .post-content {
+
+        .flexwrapper {
+            padding: 0;
+        }
+    }
+}
+
+@media (max-width: 700px) {
+    .post-content {
+        display: block;
+
+        .block {
+            width: 100%;
+        }
+    }
+}
+

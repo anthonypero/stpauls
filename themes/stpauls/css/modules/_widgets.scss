@@ -268,3 +268,31 @@
         }
     }
 }
+
+@media (max-width: 1199px) {
+
+    .block {
+
+        &.icon {
+
+            .block__title {
+
+                &::before {
+                    font-size: 20px;
+
+                }
+            }
+        }
+
+        &__title {
+            font-size: 3rem;
+        }
+    }
+
+    .list {
+
+        &--link {
+            font-size: 1.4rem;
+        }
+    }
+}

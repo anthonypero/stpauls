@@ -19,13 +19,14 @@
             font-size: 2.4rem;
             font-weight: 500;
             letter-spacing: 1px;
+            padding-right: 15px;
         }
 
         .church-address {
-            padding-left: 15px;
             font-style: normal;
             font-size: 1.6rem;
             font-weight: 100;
+            padding-right: 15px;
 
             a {
                 color: white;
@@ -38,8 +39,10 @@
         }
 
         .church-hours {
+            font-style: normal;
             font-size: 1.6rem;
-            font-weight: 300;
+            font-weight: 100;
+            padding-right: 15px;
         }
     }
 
@@ -134,4 +137,109 @@
             }
         }
     }
+}
+
+@media (max-width: 834px) {
+    .site-footer {
+
+        padding: 0 10px;
+
+        &__church-info {
+    
+            .church-name {
+                font-size: 2rem;
+            }
+    
+            .church-address {
+                font-size: 1.2rem;
+            }
+    
+            .church-hours {
+                font-size: 1.2rem;
+            }
+        }
+
+        .list {
+        
+            &--item {
+                padding: 35px 0; 
+            }
+        }
+
+        &__logo {
+            height: 100%;
+            flex-basis: 50px;
+            padding: 4px;
+        }
+    }
+}
+
+@media (max-width: 620px) {
+
+    .site-footer {
+        flex-wrap: wrap;
+        justify-content: center;
+        align-content: space-around;
+        padding-top: 20px;
+
+        &__church-info {
+            flex-direction: column;
+            max-width:350px;
+
+            .church-hours {
+                width: inherit;
+                flex: 0;
+                align-self: flex-start;
+            }
+
+            .church-name,
+            .church-address {
+                flex: 0;
+                align-self: flex-start;
+            }
+        }
+
+        &__social {
+            flex-shrink: 0;
+            width: 100%;
+            align-self: center;
+            display: flex;
+            align-content: space-around;
+            align-items: center;
+            justify-content: center;
+
+            .list {
+                align-self: center;
+                align-content: space-around;
+                justify-content: center;
+            }
+        }
+    }
+}
+
+@media (max-width: 620px) {
+
+    .site-footer {
+        display: block;
+
+        &__logo {
+            width: 50px;
+            margin: 0 auto 20px;
+        }
+
+        &__church-info {
+            display: block;
+            text-align: center;
+            padding: 0;
+            margin: 0 auto;
+
+            .church-name,
+            .church-address,
+            .church-hours {
+                margin:0;
+                padding: 0;
+            }
+        }
+    }
+
 }

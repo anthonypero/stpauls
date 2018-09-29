@@ -70,7 +70,7 @@ a {
 }
 
 .container {
-  margin: 100px auto;
+  margin: 100px auto 0;
   max-width: 1200px;
   background-color: white;
   -webkit-box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
@@ -122,6 +122,7 @@ a {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
+  max-width: 100%;
 }
 
 .site-footer {
@@ -170,12 +171,14 @@ a {
 }
 
 .virtuosic-footer {
-  position: fixed;
+  text-align: center;
+  position: relative;
   bottom: 0;
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
   margin: 40px auto;
+  padding: 0 10px;
   color: white;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -193,6 +196,25 @@ a {
 .virtuosic-footer a:hover {
   color: white;
   border-bottom: 1px solid;
+}
+
+@media (max-width: 834px) {
+  .site-content .gutter__right,
+  .site-content .gutter__left {
+    padding-right: 0;
+    padding-left: 0;
+  }
+  .site-content .flexwrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .site-content .sidebar {
+    margin: 0;
+    width: 100%;
+    padding-top: 50px;
+  }
 }
 
 html {
@@ -1026,10 +1048,40 @@ body:not(.home) .featured-image {
   margin-bottom: 1.7rem;
 }
 
+.page-content .wp-caption {
+  max-width: 100%;
+}
+
+.page-content .wp-caption-text {
+  text-align: center;
+  font-weight: 500;
+  font-size: .9em;
+  padding-bottom: 25px;
+  padding-top: 12.5px;
+  color: #787879;
+  line-height: 1.1;
+}
+
 .page-content img {
   max-width: 100%;
   height: auto;
   width: 100%;
+}
+
+.page-content .alignright {
+  float: right;
+  margin: 25px 0 25px 25px;
+  display: block;
+  width: auto;
+  max-width: 47%;
+}
+
+.page-content .alignleft {
+  float: left;
+  margin: 25px 25px 25px 0;
+  display: block;
+  width: auto;
+  max-width: 47%;
 }
 
 .page-content p:last-of-type + ul,
@@ -1042,7 +1094,7 @@ body:not(.home) .featured-image {
   text-transform: uppercase;
   font-size: 40px;
   font-weight: 600;
-  line-height: 1;
+  line-height: 1.2;
   margin-bottom: 2rem;
 }
 
@@ -1050,15 +1102,18 @@ body:not(.home) .featured-image {
   font-family: 'Roboto Condensed', Impact, sans-serif;
   text-transform: uppercase;
   margin-bottom: 2rem;
+  line-height: 1.2;
 }
 
 .page-content h3 {
   font-weight: 600;
+  line-height: 1.2;
 }
 
 .page-content h4, .page-content h5, .page-content h6 {
   font-size: 2rem;
   font-weight: 600;
+  line-height: 1.2;
 }
 
 .page-content a {
@@ -1125,6 +1180,15 @@ body:not(.home) .featured-image {
 
 .page-content blockquote .cite {
   font-size: .85em;
+}
+
+@media (max-width: 600px) {
+  .page-content .alignright,
+  .page-content .alignleft {
+    float: none;
+    max-width: 100%;
+    margin: 25px auto;
+  }
 }
 
 .block {
@@ -1392,6 +1456,18 @@ body:not(.home) .featured-image {
   top: -1px;
 }
 
+@media (max-width: 1199px) {
+  .block.icon .block__title::before {
+    font-size: 20px;
+  }
+  .block__title {
+    font-size: 3rem;
+  }
+  .list--link {
+    font-size: 1.4rem;
+  }
+}
+
 .site-footer {
   overflow: hidden;
 }
@@ -1410,13 +1486,14 @@ body:not(.home) .featured-image {
   font-size: 2.4rem;
   font-weight: 500;
   letter-spacing: 1px;
+  padding-right: 15px;
 }
 
 .site-footer__church-info .church-address {
-  padding-left: 15px;
   font-style: normal;
   font-size: 1.6rem;
   font-weight: 100;
+  padding-right: 15px;
 }
 
 .site-footer__church-info .church-address a {
@@ -1429,8 +1506,10 @@ body:not(.home) .featured-image {
 }
 
 .site-footer__church-info .church-hours {
+  font-style: normal;
   font-size: 1.6rem;
-  font-weight: 300;
+  font-weight: 100;
+  padding-right: 15px;
 }
 
 .site-footer__social {
@@ -1530,6 +1609,116 @@ body:not(.home) .featured-image {
   text-decoration: none;
 }
 
+@media (max-width: 834px) {
+  .site-footer {
+    padding: 0 10px;
+  }
+  .site-footer__church-info .church-name {
+    font-size: 2rem;
+  }
+  .site-footer__church-info .church-address {
+    font-size: 1.2rem;
+  }
+  .site-footer__church-info .church-hours {
+    font-size: 1.2rem;
+  }
+  .site-footer .list--item {
+    padding: 35px 0;
+  }
+  .site-footer__logo {
+    height: 100%;
+    -ms-flex-preferred-size: 50px;
+        flex-basis: 50px;
+    padding: 4px;
+  }
+}
+
+@media (max-width: 620px) {
+  .site-footer {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-line-pack: distribute;
+        align-content: space-around;
+    padding-top: 20px;
+  }
+  .site-footer__church-info {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    max-width: 350px;
+  }
+  .site-footer__church-info .church-hours {
+    width: inherit;
+    -webkit-box-flex: 0;
+        -ms-flex: 0;
+            flex: 0;
+    -ms-flex-item-align: start;
+        align-self: flex-start;
+  }
+  .site-footer__church-info .church-name,
+  .site-footer__church-info .church-address {
+    -webkit-box-flex: 0;
+        -ms-flex: 0;
+            flex: 0;
+    -ms-flex-item-align: start;
+        align-self: flex-start;
+  }
+  .site-footer__social {
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
+    width: 100%;
+    -ms-flex-item-align: center;
+        align-self: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-line-pack: distribute;
+        align-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .site-footer__social .list {
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    -ms-flex-line-pack: distribute;
+        align-content: space-around;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+@media (max-width: 620px) {
+  .site-footer {
+    display: block;
+  }
+  .site-footer__logo {
+    width: 50px;
+    margin: 0 auto 20px;
+  }
+  .site-footer__church-info {
+    display: block;
+    text-align: center;
+    padding: 0;
+    margin: 0 auto;
+  }
+  .site-footer__church-info .church-name,
+  .site-footer__church-info .church-address,
+  .site-footer__church-info .church-hours {
+    margin: 0;
+    padding: 0;
+  }
+}
+
 /* Excerpt Lists */
 .excerpt-list .excerpt-list__row {
   margin-top: 25px;
@@ -1539,6 +1728,7 @@ body:not(.home) .featured-image {
 
 .excerpt-list .excerpt-list__row--title {
   margin: 2rem 0 0 0;
+  line-height: 1.2;
 }
 
 .excerpt-list .excerpt-list__row--title.header {
@@ -1601,6 +1791,33 @@ body:not(.home) .featured-image {
 .excerpt-list .excerpt-list__row--label {
   font-weight: 600;
   margin-top: 12.5px;
+}
+
+@media (max-width: 834px) {
+  .excerpt-list .excerpt-list__row--post-image {
+    width: 250px;
+  }
+  .excerpt-list .excerpt-list__row--post-image picture {
+    margin-bottom: 12.5px;
+  }
+}
+
+@media (max-width: 600px) {
+  .excerpt-list .flex {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .excerpt-list .excerpt-list__row--post-image {
+    width: 100%;
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+  .excerpt-list .excerpt-list__row--post-image picture {
+    display: none;
+  }
 }
 
 .staff .page-content {
@@ -1809,7 +2026,7 @@ body:not(.home) .featured-image {
   font-size: .85em;
   color: #787879;
   text-transform: uppercase;
-  margin-top: -5px;
+  margin-top: 5px;
   margin-bottom: 25px;
 }
 
@@ -2028,6 +2245,45 @@ body:not(.home) .featured-image {
 
 .post-content .block .list--link:hover .list--link__postdate {
   color: #10538a;
+}
+
+@media (max-width: 1199px) {
+  .post-content .block {
+    width: 48%;
+  }
+  .post-content .block.icon .block__title::before {
+    font-size: 20px;
+  }
+  .post-content .block__title {
+    font-size: 3rem;
+  }
+  .post-content .list--link {
+    font-size: 1.4rem;
+  }
+  .post-content .flexwrapper {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .post-content .widget-3 {
+    width: 100%;
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
+  }
+}
+
+@media (max-width: 834px) {
+  .post-content .flexwrapper {
+    padding: 0;
+  }
+}
+
+@media (max-width: 700px) {
+  .post-content {
+    display: block;
+  }
+  .post-content .block {
+    width: 100%;
+  }
 }
 
 .block.icon .block__title {

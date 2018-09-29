@@ -7,10 +7,42 @@
         margin-bottom: 1.7rem;
     }
 
+    // page content images from the editor
+
+    .wp-caption {
+        max-width: 100%;
+
+        &-text {
+            text-align: center;
+            font-weight: 500;
+            font-size: .9em;
+            padding-bottom: $gutter;
+            padding-top: $gutter / 2;
+            color: $gray;
+            line-height: 1.1;
+        }
+    }
+
     img {
         max-width: 100%;
         height: auto;
         width: 100%;
+    }
+
+    .alignright {
+        float: right;
+        margin: $gutter 0 $gutter $gutter;
+        display: block;
+        width: auto;
+        max-width: 47%;
+    }
+
+    .alignleft {
+        float: left;
+        margin: $gutter $gutter $gutter 0;
+        display: block;
+        width: auto;
+        max-width: 47%;
     }
 
     p:last-of-type {
@@ -26,22 +58,25 @@
         text-transform: uppercase;
         font-size: 40px;
         font-weight: 600; 
-        line-height: 1;
+        line-height: 1.2;
         margin-bottom: 2rem;
     }
     h2 {
         font-family: 'Roboto Condensed', Impact, sans-serif;
         text-transform: uppercase;
         margin-bottom: 2rem;
+        line-height: 1.2;
     }
 
     h3 {
         font-weight: 600;
+        line-height: 1.2;
     }
 
     h4,h5,h6 {
         font-size: 2rem;
         font-weight: 600;
+        line-height: 1.2;
     }
 
     a {
@@ -113,4 +148,18 @@
             font-size: .85em;
         }
     }
+}
+
+@media (max-width: 600px) {
+
+.page-content {
+
+    .alignright,
+    .alignleft {
+        float: none;
+        max-width: 100%;
+        margin: $gutter auto;
+    }
+}
+
 }

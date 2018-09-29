@@ -10,6 +10,7 @@
 
         &--title {
             margin: 2rem 0 0 0;
+            line-height: 1.2;
 
             &.header {
                 width: 100%;
@@ -69,6 +70,39 @@
         &--label {
             font-weight: 600;
             margin-top: $gutter / 2;
+        }
+    }
+}
+
+@media (max-width: 834px) {
+    .excerpt-list {
+        & &__row {
+            &--post-image {
+                width: 250px;
+
+                picture {
+                    margin-bottom: $gutter / 2;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    .excerpt-list {
+        .flex {
+            flex-direction: column;
+        }
+
+        & &__row {
+            &--post-image {
+                width: 100%;
+                order: 2;
+
+                picture {
+                    display: none;
+                }
+            }
         }
     }
 }
