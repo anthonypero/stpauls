@@ -37,6 +37,7 @@ $lightslider_items = get_option( 'lightslider_items' );
     $date = get_field( 'event_date' );
     $time = get_field( 'event_time' );
     $timestamp = strtotime($date);
+    $post_id = 'pid-' . get_the_ID();
     
     if ($time) {
         $event_date = date( 'F jS, Y', $timestamp);
@@ -48,7 +49,25 @@ $lightslider_items = get_option( 'lightslider_items' );
 
         <li class="lightslider__list--item">
 
-            <a href="<?php echo get_the_permalink(); ?>" class="slide" style="background-image: url('<?php echo $post_image['sizes']['sp_slider_lg']; ?>')">
+            <style>
+                .lightslider__list--item .slide.<?php echo $post_id; ?> {
+                    background-image: url('<?php echo $post_image['sizes']['sp_slider_lg']; ?>');
+                }
+                @media (max-width: 834px) {
+                    .lightslider__list--item .slide.<?php echo $post_id; ?> {
+                        background-image: url('<?php echo $post_image['sizes']['sp_slider_md']; ?>');
+                    }
+                }
+                @media (max-width: 550px) {
+                    .lightslider__list--item .slide.<?php echo $post_id; ?> {
+                        background-image: url('<?php echo $post_image['sizes']['sp_slider_sm']; ?>');
+                    }
+                }
+            </style>
+
+            <a href="<?php echo get_the_permalink(); ?>" >
+            
+                <div class="slide <?php echo $post_id; ?>"></div>
 
                 <div class="slide__info">
                     <div class="slide__top">
