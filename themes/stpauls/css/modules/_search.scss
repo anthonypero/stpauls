@@ -1,0 +1,46 @@
+.sp-search{
+    
+    &__form {
+
+        display: flex;
+
+        .screen-reader-text {
+            display: none;
+        }
+
+        br {
+            display: none;
+        }
+
+        input {
+            font-size: 25px;
+            flex: 1;
+            border: 1px solid $light_gray;
+            border-radius: 10px;
+            padding: 15px 25px;
+
+            &::placeholder {
+                color: $light_gray;
+            }
+
+            &:focus::placeholder {
+                color: transparent;
+            }
+        }
+
+        #searchsubmit {
+            max-width: 100px;
+            margin-left: $gutter / 2;
+            background: $main_color;
+            border-color: $main_color;
+            text-transform: uppercase;
+            color: white;
+
+            &:hover {
+                background: $secondary_color;
+                border-color: $secondary_color;
+                cursor: pointer;
+            }
+        }
+    }
+}

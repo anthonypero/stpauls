@@ -21,4 +21,33 @@
             border-color: $secondary_color;
         }
     }
+
+    .lcp_paginator {
+
+        display: flex;
+        justify-content: center;
+        
+        li {
+            display: block;
+            border: none;
+            padding: 0;
+            margin: 0; 
+
+            a,
+            &.lcp_currentpage, {
+                display: block;
+                border-radius: 5px;
+                padding: 5px 10px;
+                border: 1px solid $gray;
+                margin: 5px;
+                font-size: 12px;
+            }
+
+            a:hover {
+                background-color: $secondary_color;
+                border-color: $secondary_color;
+                color: white;
+            }
+        }
+    }
 }

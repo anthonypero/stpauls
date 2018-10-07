@@ -5,7 +5,7 @@
 $staff_portrait = get_field('staff_portrait');
 
 ?>
-
+<?php if ( $staff_portrait ) : ?>
     <div class="staff__member--photo excerpt-list__row--post-image">
         <img src="<?php echo $staff_portrait['sizes']['sp_thumb']; ?>" />
         <div class="staff__member--contact">
@@ -57,6 +57,8 @@ $staff_portrait = get_field('staff_portrait');
 
         </div>
     </div>
+
+<?php endif; ?>
 
     <div class="staff__member--info excerpt-list__row--info">
 

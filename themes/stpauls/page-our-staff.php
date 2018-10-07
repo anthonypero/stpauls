@@ -35,9 +35,15 @@ if ( function_exists('virtuosic_theme_info') ) {
                     <div class="staff__group staff__group--clergy">
 
                         <h2 class="staff__group--title">Our Clergy</h2>
+                        <?php if ( term_description( 3, 'staff_type' ) ) : ?>
+                        <div class="staff-type__description">
+                            <?php echo term_description( 3, 'staff_type'); ?>
+                        </div>
+                        <?php endif; ?>
 
                         <?php $query = new WP_Query([
                             'post_type'         => 'staff',
+                            'posts_per_page'    => -1,
                             'tax_query'         => [[
                                 'taxonomy'      => 'staff_type',
                                 'field'         => 'slug',
@@ -62,9 +68,15 @@ if ( function_exists('virtuosic_theme_info') ) {
                     <div class="staff__group staff__group--staff">
 
                         <h2 class="staff__group--title">Our Staff</h2>
+                        <?php if ( term_description( 4, 'staff_type' ) ) : ?>
+                        <div class="staff-type__description">
+                            <?php echo term_description( 4, 'staff_type'); ?>
+                        </div>
+                        <?php endif; ?>
 
                         <?php $query = new WP_Query([
                             'post_type'         => 'staff',
+                            'posts_per_page'    => -1,
                             'tax_query'         => [[
                                 'taxonomy'      => 'staff_type',
                                 'field'         => 'slug',
@@ -89,9 +101,15 @@ if ( function_exists('virtuosic_theme_info') ) {
                     <div class="staff__group staff__group--vestry">
 
                         <h2 class="staff__group--title">Our Vestry</h2>
+                        <?php if ( term_description( 2, 'staff_type' ) ) : ?>
+                        <div class="staff-type__description">
+                            <?php echo term_description( 2, 'staff_type'); ?>
+                        </div>
+                        <?php endif; ?>
 
                         <?php $query = new WP_Query([
                             'post_type'         => 'staff',
+                            'posts_per_page'    => -1,
                             'tax_query'         => [[
                                 'taxonomy'      => 'staff_type',
                                 'field'         => 'slug',

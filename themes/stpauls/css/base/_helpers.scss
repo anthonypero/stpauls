@@ -21,3 +21,11 @@
 .flex {
     display: flex;
 }
+
+hr {
+    color: $light_gray;
+    border: none;
+    border-bottom: 1px solid $light_gray;
+    margin-top: $gutter;
+    margin-bottom: $gutter;
+}

@@ -146,3 +146,15 @@ add_filter( 'pre_get_posts', 'sp_add_custom_types' );
  * Requires at least version ACF 4.4.12 to work
  */
 define('ACF_EARLY_ACCESS', '5');
+
+/* Replace Login Logo Link */
+
+function my_login_logo_url() {
+    return get_bloginfo( 'url' );
+}
+add_filter( 'login_headerurl', 'my_login_logo_url' );
+    
+function my_login_logo_url_title() {
+    return "Return to St. Paul's";
+}
+add_filter( 'login_headertitle', 'my_login_logo_url_title' );

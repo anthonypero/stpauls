@@ -35,7 +35,7 @@
             </a>
             <?php endif; ?>
         </div>
-        <div class="search-trigger login-search__item"><a id="search-trigger"><i class="fas fa-search"></i></a></div>
+        <div class="search-trigger login-search__item"><a href="/search" id="search-trigger"><i class="fas fa-search"></i></a></div>
     </div>
 
 </div><!-- /.utility -->

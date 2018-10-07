@@ -107,6 +107,8 @@
 
         &--photo {
             padding-right: 18px;
+            width: 220px;
+            flex-shrink: 0;
         }
 
         &--bio {
@@ -133,6 +135,8 @@
                 background: $secondary_color;
             }
         }
+
+        
     }
 
     &__contact-form {
@@ -159,4 +163,16 @@
         border: none;
         cursor: pointer;
     }
+}
+
+.staff-type__description { 
+
+    margin-top: 15px;
+    border-top: 1px solid $text;
+    padding-top: 15px;
+            
+    p {
+        font-size: .9em;
+    }
+
 }

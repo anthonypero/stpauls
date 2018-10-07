@@ -37,14 +37,8 @@ USA
 /* This is the string which will gather all the information.*/
 $lcp_display_output = '';
 
-// Show category link:
-$lcp_display_output .= $this->get_category_link('strong');
-
-// Show the conditional title:
-$lcp_display_output .= $this->get_conditional_title();
-
 //Add 'starting' tag. Here, I'm using an unordered list (ul) as an example:
-$lcp_display_output .= '<ul class="lcp_catlist list news-block">';
+$lcp_display_output .= '<section class="lcp_catlist list sermon-list excerpt-list"><div class="page-content">';
 
 /* Posts Loop
  *
@@ -61,26 +55,53 @@ global $post;
 while ( have_posts() ):
   the_post();
 
-  //Start a List Item for each post:
-  $lcp_display_output .= '<li class="list--item page-item-' . $post->ID . '">';
+  // Start an article for each post:
+  $lcp_display_output .= '<article class="excerpt-list__row flex">';
 
-  //Open Link
-  $lcp_display_output .= '<a class="list--link" href="' . get_the_permalink() . '">';
+  $post_image = get_field('post_image'); 
+  $audio = get_field('sermon_audio_upload');
 
-  //Add the Title:
-  $lcp_display_output .= '<div class="list--link__title">' . get_the_title() . '</div>';
+  // Print the image if it exists
+    
+  if ( !empty($post_image) ) {
 
-  //Show date:
-  $lcp_display_output .= '<div class="list--link__postdate">' . $this->get_date($post) . '</div>';
+    $lcp_display_output .= '<div class="excerpt-list__row--post-image">';
+    $lcp_display_output .=    '<picture>';
+    $lcp_display_output .=      '<source media="(min-width: 1200px)" srcset="' . $post_image['sizes']['sp_3x2_sm'] . '">';
+    $lcp_display_output .=      '<source media="(min-width: 768px)" srcset="' . $post_image['sizes']['sp_3x2_md'] . '">';
+    $lcp_display_output .=      '<img src="' . $post_image['sizes']['sp_3x2_sm'] . '" alt="' . $post_image['alt'] . '" />';
+    $lcp_display_output .=    '</picture>';
+    $lcp_display_output .= '</div>';
 
-  //Close Link:
-  $lcp_display_output .= '</a>';
+  }
+
+  // The Post Info block
+  $lcp_display_output .= '<div class="excerpt-list__row--info">';
+
+  // Display the title
+  $lcp_display_output .=    '<h2 class="excerpt-list__row--title">';
+  $lcp_display_output .=      '<a href="' . get_the_permalink() . '" class="excerpt-list__row--link" title="' . get_the_title() . '">' . get_the_title() . '</a>';
+  $lcp_display_output .=    '</h2>';
+
+  // Post Date
+  $lcp_display_output .=    '<div class="submitted">' . get_the_date( 'F jS, Y' ) . '</div>';
+  $lcp_display_output .=    '<p>' . get_the_excerpt() . '</p><p></p>';
+
+if ($audio) {
+  $lcp_display_output .=    '<audio controls><source src="' . $audio . '" type="audio/mpeg"></audio>';
+}
+  $lcp_display_output .= '</div>';
+
+
 
   //Close li tag
-  $lcp_display_output .= '</li>';
+  $lcp_display_output .= '</article>';
 endwhile;
 
 // Close the wrapper I opened at the beginning:
-$lcp_display_output .= '</ul>';
+$lcp_display_output .= '</div></section>';
+
+//Pagination
+$lcp_display_output .= '<div class="pagination">' . $this->get_pagination() . '</div>';
 
 $this->lcp_output = $lcp_display_output;
