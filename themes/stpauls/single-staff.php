@@ -87,6 +87,8 @@ $staff_portrait = get_field( 'staff_portrait' );
 
                     <div class="page-body">
                         <?php the_content(); ?>
+                            
+                        <a name="contact-form"></a>
 
                         <div class="staff__contact-form">
                             <h2 class="contact-form__header">Send a Message</h2>

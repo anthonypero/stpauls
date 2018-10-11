@@ -48,7 +48,7 @@ $staff_portrait = get_field('staff_portrait');
 
             <?php if ( get_field( 'staff_contact_form_id' ) ) : ?>
             <div class="staff__member--contact__item contact">
-                <a href="<?php echo get_field( 'staff_contact_form_id' ); ?>" title="Send an Email">
+                <a href="<?php the_permalink(); ?>#contact-form" title="Send an Email">
                     <i class="far fa-envelope-open"></i>
                     <span class="hidden label">Send an Email</span>
                 </a>
