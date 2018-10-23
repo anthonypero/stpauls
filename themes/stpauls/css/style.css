@@ -2141,7 +2141,6 @@ body:not(.home) .featured-image {
 }
 
 .featured-image.front {
-  min-height: 380px;
   background-repeat: no-repeat;
   position: relative;
   border-top: 1px solid #10538a;
